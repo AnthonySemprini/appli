@@ -8,7 +8,7 @@
 </head>
 <body>
     
-<h1>Ajouter un prduit</h1>
+<h1>Ajouter un produit</h1>
 <form action="traitement.php" method="post,">
     <p>
         <label>
@@ -29,7 +29,7 @@
         </label>
     </p>
     <p>
-        <input type="text" name="submit" value="Ajouter le produit">
+        <input type="submit" name="submit" value="Ajouter le produit">
     </p>
 </form>
     
