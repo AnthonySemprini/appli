@@ -1,16 +1,24 @@
+/******* style de recap.php *********/
+
+    
+
 h1{
     font-size: 100px;
     text-align: center;
     font-family: 'Smokum', cursive;
     text-decoration: underline;
     color: #113537 ;
+   
 }
 
 .tab{
-height: 100%;
-width: 100%;
-display: flex;
-justify-content: center;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+ 
 }
 
 table{
@@ -22,6 +30,7 @@ table{
     height: 400px;
     border-radius: 10px;
     background-color:#FFEAD0;
+   
 }
 table th{
     height: 25px;
@@ -36,4 +45,34 @@ table td, table th{
     text-align: center;
     
     border-radius: 10px;
+}
+
+/****** style de index.php *********/
+
+.ajout{
+    font-size: 70px;
+}
+
+form{
+    border: 8px solid#113537 ;
+    border-radius: 10px;
+    background-color:#FFEAD0;
+    width: 500px;
+}
+label{
+    margin-left: 15px;
+}
+input{
+    margin-left: 15px;
+    border: 1px solid #113537;
+    border-radius: 5px;
+    background-color:#CBA69E ;
+    height: 30px;
+    width: 140px;
+}
+.ajoutPanier{
+    background-color:  #96616B; 
+    height: 30px;
+    width: 140px;
+    font-weight: bold;
 }
