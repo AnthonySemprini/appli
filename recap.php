@@ -38,15 +38,15 @@ session_start();
             echo "<tr>",
                     "<td>".$index."</td>",
                     "<td>".$product['name']."</td>",
-                    "<td>".number_format($product['price'], 2, ",","&nbsq;")."€</td>",
+                    "<td>".number_format($product['price'], 2, ",","&nbsp;")."&nbsp;€</td>",
                     "<td>".$product['qtt']."</td>",
-                    "<td>".number_format($product['total'], 2, ",", "&nbsq;")."€</td>",
+                    "<td>".number_format($product['total'], 2, ",", "&nbsp;")."&nbsp;€</td>",
                 "</tr>";
             $totalGeneral += $product['total'];
         }
         echo "<tr>",
         "<td colspan=4>Total général : </td>",
-        "<td><strong>".number_format($totalGeneral, 2, ", ","&nbsq;")."</strong></td>",
+        "<td><strong>".number_format($totalGeneral, 2, ", ","&nbsp;")."&nbsp;€</strong></td>",
         "</tr>",
             "</tbody>",
              "</table>";
@@ -54,11 +54,12 @@ session_start();
     }
   ?>
   <br> 
-
- <button class="myButton" action="traitement.php?action=delete" method="get">vider panier</button>
-  <br>
+<div class="button">
+    
+ <button class="myButton"><a href="traitement.php?action=delete" method="get">vider panier</a></button>
+ 
   <button class="myButton"><a href="index.php">Ajouter produit</a></button>
-  
+  </div>  
 
   </div> 
 </body>

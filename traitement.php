@@ -8,30 +8,30 @@ if (isset($_GET['action'])) {
             //*----------- AJOUTER PRODUIT ------------------
         case "add":
             if (isset($_POST["submit"])) {
-
                 $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
                 $price = filter_input(INPUT_POST, "price", FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
                 $qtt = filter_input(INPUT_POST, "qtt", FILTER_VALIDATE_INT);
-
+                
                 if ($name && $price && $qtt) {
-
+                    
                     $product = [
                         "name" => $name,
                         "price" => $price,
                         "qtt" => $qtt,
                         "total" => $price * $qtt
                     ];
-                    $_SESSION['products'][] = $product;
+                    $_SESSION['products'][]= $product;
                 }
             }
+            break;
 
-            //*----------- SUPPRIMER UN PRODUIT -------------------
+            //*----------- VIDER LE PANIER -------------------
             case "delete":
-                if(isset($_GET["delete"])){
-                    $product = array();
-                }
-            //*----------- VIDER LE PANIER ------------------------
+               unset($_SESSION['products']);
+                
+            //*----------- SUPPRIMER UN PRODUIT ------------------------
             case "clear":
+                unset()
             //*----------- AUGMENTER LA QUANTITE D'UN PRODUI ------
             case "up-qtt":
             //*----------- DIMINUER LA QUANTITER D'UN PRODUIT -----

@@ -58,6 +58,11 @@ table td, table th{
 	font-weight:bold;
 	padding:16px 31px;
 	text-decoration:none;
+    margin: 30px;
+}
+.button{
+    display: flex;
+    flex-direction: row;
 }
 /****** style de index.php *********/
 
