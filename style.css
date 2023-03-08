@@ -64,6 +64,13 @@ table td, table th{
     display: flex;
     flex-direction: row;
 }
+#red, i{
+    color: red;
+    
+}
+#green{
+    color: green;
+}
 /****** style de index.php *********/
 
 .ajout{

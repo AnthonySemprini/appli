@@ -30,6 +30,7 @@ session_start();
                         "<th>Prix</th>",
                         "<th>Quantité</th>",
                         "<th>Total</th>",
+                        "<th>Actions</th>",
                     "</tr>",
                 "</thead>",
                 "<tbody>";
@@ -39,9 +40,11 @@ session_start();
                     "<td>".$index."</td>",
                     "<td>".$product['name']."</td>",
                     "<td>".number_format($product['price'], 2, ",","&nbsp;")."&nbsp;€</td>",
-                    "<td>".$product['qtt']."</td>",
+                    "<td>".'<i class="fa-regular fa-square-plus" id="green"></i>'." ".$product['qtt']." ".'<i class="fa-regular fa-square-minus" id="red"></i>'."</td>",
                     "<td>".number_format($product['total'], 2, ",", "&nbsp;")."&nbsp;€</td>",
-                "</tr>";
+                    "<td>"."<a href='traitement.php?action=delete&id='.$index.> <i class='fa-solid fa-trash-can'></a></i> </td>",
+                    "</tr>";
+
             $totalGeneral += $product['total'];
         }
         echo "<tr>",
@@ -56,11 +59,12 @@ session_start();
   <br> 
 <div class="button">
     
- <button class="myButton"><a href="traitement.php?action=delete" method="get">vider panier</a></button>
+ <button class="myButton"><a href="traitement.php?action=deleteAll" method="get">vider panier</a></button>
  
   <button class="myButton"><a href="index.php">Ajouter produit</a></button>
   </div>  
 
   </div> 
+  <script src="https://kit.fontawesome.com/ef55713c5a.js" crossorigin="anonymous"></script>
 </body>
 </html>

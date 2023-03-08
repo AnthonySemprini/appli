@@ -25,16 +25,22 @@ if (isset($_GET['action'])) {
             }
             break;
 
-            //*----------- VIDER LE PANIER -------------------
-            case "delete":
-               unset($_SESSION['products']);
+            //*----------- VIDER LE PANIER -----------------------------
+            case "deleteAll":
+                unset($_SESSION['products']);
+                    die;
+                    break;
                 
             //*----------- SUPPRIMER UN PRODUIT ------------------------
-            case "clear":
-                unset()
-            //*----------- AUGMENTER LA QUANTITE D'UN PRODUI ------
+            // 
+            case "delete":
+                unset($_SESSION['products'][$_GET['id']]);
+                var_dump($_SESSION);die;
+                    die;
+                    break;
+            //*----------- AUGMENTER LA QUANTITE D'UN PRODUIT ----------
             case "up-qtt":
-            //*----------- DIMINUER LA QUANTITER D'UN PRODUIT -----
+            //*----------- DIMINUER LA QUANTITER D'UN PRODUIT ----------
             case "down-qtt":
     }
 }
