@@ -13,7 +13,7 @@
     <div class="tab">
 
         <h1 class="ajout">Ajouter un produit</h1>
-        <form action="traitement.php" method="post">
+        <form action="traitement.php?action=add" method="post">
             <p>
                 <label>
                     Nom du produit :

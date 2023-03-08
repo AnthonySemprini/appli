@@ -54,7 +54,10 @@ session_start();
     }
   ?>
   <br> 
-<button class="myButton"><a href="index.php">Ajouter produit</a></button>
+
+ <button class="myButton" action="traitement.php?action=delete" method="get">vider panier</button>
+  <br>
+  <button class="myButton"><a href="index.php">Ajouter produit</a></button>
   
 
   </div> 
