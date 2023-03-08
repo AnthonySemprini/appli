@@ -36,6 +36,8 @@
                 <input type="submit" name="submit" value="Ajouter le produit" class="ajoutPanier">
             </p>
         </form>
+        <br>
+        <button class="myButton"><a href="recap.php">Panier</a></button>
     </div>
 </body>
 

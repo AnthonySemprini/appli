@@ -46,7 +46,19 @@ table td, table th{
     
     border-radius: 10px;
 }
-
+.myButton {
+	background-color:#96616b;
+	border-radius:20px;
+	border:3px solid #113537;
+	display:inline-block;
+	cursor:pointer;
+	color:#113537;
+	font-family:Arial;
+	font-size:19px;
+	font-weight:bold;
+	padding:16px 31px;
+	text-decoration:none;
+}
 /****** style de index.php *********/
 
 .ajout{

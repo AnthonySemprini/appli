@@ -52,7 +52,11 @@ session_start();
              "</table>";
 
     }
-  ?> 
+  ?>
+  <br> 
+<button class="myButton"><a href="index.php">Ajouter produit</a></button>
+  
+
   </div> 
 </body>
 </html>
