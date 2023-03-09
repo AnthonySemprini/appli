@@ -34,8 +34,8 @@
             </p>
             <p>
                 <label>
-                    Description : 
-                    <input type="text" >
+                    Description :
+                    <textarea name="description" rows="5" cols="25" placeholder="Entrez votre texte..."></textarea>
                 </label>
             </p>
             <p>
