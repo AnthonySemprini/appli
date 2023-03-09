@@ -40,9 +40,12 @@ session_start();
                     "<td>".$index."</td>",
                     "<td>".$product['name']."</td>",
                     "<td>".number_format($product['price'], 2, ",","&nbsp;")."&nbsp;€</td>",
-                    "<td>".'<i class="fa-regular fa-square-plus" id="green"></i>'." ".$product['qtt']." ".'<i class="fa-regular fa-square-minus" id="red"></i>'."</td>",
+
+                    "<td><a href='traitement.php?action=up-qtt&id=$index'><i class='fa-regular fa-square-plus'></a></i>".
+                    $product['qtt']."<a href='traitement.php?action=down-qtt&id=$index'<i class='fa-regular fa-square-minus'></a></i></td>",
+
                     "<td>".number_format($product['total'], 2, ",", "&nbsp;")."&nbsp;€</td>",
-                    "<td>"."<a href='traitement.php?action=delete&id='.$index.> <i class='fa-solid fa-trash-can'></a></i> </td>",
+                    "<td>"."<a href='traitement.php?action=delete&id=$index'> <i class='fa-solid fa-trash-can'></a></i> </td>",
                     "</tr>";
 
             $totalGeneral += $product['total'];

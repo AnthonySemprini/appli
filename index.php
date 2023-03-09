@@ -33,6 +33,12 @@
                 </label>
             </p>
             <p>
+                <label>
+                    Description : 
+                    <input type="text" >
+                </label>
+            </p>
+            <p>
                 <input type="submit" name="submit" value="Ajouter le produit" class="ajoutPanier">
             </p>
         </form>

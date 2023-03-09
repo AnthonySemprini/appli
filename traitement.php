@@ -28,20 +28,45 @@ if (isset($_GET['action'])) {
             //*----------- VIDER LE PANIER -----------------------------
             case "deleteAll":
                 unset($_SESSION['products']);
-                    die;
-                    break;
+                header("Location: recap.php");
+                die;
+                break;
                 
             //*----------- SUPPRIMER UN PRODUIT ------------------------
             // 
             case "delete":
-                unset($_SESSION['products'][$_GET['id']]);
-                var_dump($_SESSION);die;
+                // si l'id est défini et si le produit existe dans la session
+                if(isset($_GET["id"]) && isset($_SESSION["products"][$_GET["id"]])) {
+                    unset($_SESSION['products'][$_GET['id']]);
+                    header("Location: recap.php");
                     die;
-                    break;
+                }
+                break;
+               
             //*----------- AUGMENTER LA QUANTITE D'UN PRODUIT ----------
             case "up-qtt":
+                if(isset($_GET["id"]) && isset($_SESSION["products"][$_GET["id"]])) {
+                    die;
+                }
+                break;
+
             //*----------- DIMINUER LA QUANTITER D'UN PRODUIT ----------
             case "down-qtt":
-    }
+                if(isset($_GET["id"]) && isset($_SESSION["products"][$_GET["id"]])) {
+
+                    if($_SESSION['products'][$_GET['id']]['qtt'] ==1){
+                        unset($_SESSION['products'][$_GET['id']]);
+                        header("Location: recap.php");
+                    }
+
+                    else{
+                        $_SESSION['products'][$_GET['id']]['qtt']--;
+                        header("Location: recap.php");
+                    }
+
+                    die;
+                    break;
+                }
 }
 header("Location:index.php");
+}
