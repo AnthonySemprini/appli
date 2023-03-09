@@ -12,7 +12,7 @@ h1{
 }
 
 .tab{
-    height: 100%;
+    height: 100vh;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -22,12 +22,12 @@ h1{
 }
 
 table{
-    margin-top: 100px;
+    margin-top: 50px;
     border: 8px solid#113537 ;
     border-collapse: separate;
     border-spacing: 15px;
-    width: 800px;
-    height: 400px;
+    width: 70%;
+    height: 60%;
     border-radius: 10px;
     background-color:#FFEAD0;
    
@@ -64,31 +64,32 @@ table td, table th{
     display: flex;
     flex-direction: row;
 }
-#red, i{
+i{
     color: red;
     
 }
-#green{
-    color: green;
-}
+
 /****** style de index.php *********/
 
 .ajout{
     font-size: 70px;
 }
 
-form{
-    border: 8px solid#113537 ;
+
+form.form1{
+    border: 8px solid #113537;
     border-radius: 10px;
     background-color:#FFEAD0;
     width: 500px;
+    height: 450px;
 }
+
 label{
     margin-left: 15px;
 }
-input{
+.ajoutPanier, .saisi{
     margin-left: 15px;
-    border: 1px solid #113537;
+    border: 3px solid #113537;
     border-radius: 5px;
     background-color:#CBA69E ;
     height: 30px;

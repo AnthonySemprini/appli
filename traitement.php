@@ -12,14 +12,19 @@ if (isset($_GET['action'])) {
                 $price = filter_input(INPUT_POST, "price", FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
                 $qtt = filter_input(INPUT_POST, "qtt", FILTER_VALIDATE_INT);
                 $description = filter_input(INPUT_POST, "description", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+                $img = filter_input(INPUT_POST,"image",FILTER_ )
                     //verifie si les choses saisi dans les input son se que l'on attend
                 if ($name && $price && $qtt && $description) {
+
+                    // fichier uploadé
+
 
                     $product = [
                         "name" => $name,
                         "price" => $price,
                         "qtt" => $qtt,
                         "description" => $description,
+                        "image" => $img,
                         "total" => $price * $qtt
                     ];
 

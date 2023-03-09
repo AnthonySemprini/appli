@@ -32,6 +32,7 @@ session_start();
             "<th>Quantité</th>",
             "<th>Description</th>",
             "<th>Total</th>",
+            "<th>Photo</th>",
             "<th>Actions</th>",
             "</tr>",
             "</thead>",
@@ -47,10 +48,11 @@ session_start();
                     $product['qtt'] . "<a href='traitement.php?action=down-qtt&id=$index'<i class='fa-regular fa-square-minus'></a></i></td>",
                 "<td>" . $product['description'] . "</td>",
                 "<td>" . number_format($total, 2, ",", "&nbsp;") . "&nbsp;€</td>",
+                "<td></td>",
                 "<td>" . "<a href='traitement.php?action=delete&id=$index'> <i class='fa-solid fa-trash-can'></a></i> </td>",
                 "</tr>";
 
-                $totalGeneral += $product['total'];  //calcul le total general
+                $totalGeneral += $total;  //calcul le total general
             }
 
             echo "<tr>",
