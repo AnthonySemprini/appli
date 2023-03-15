@@ -14,11 +14,11 @@ session_start();
     <link href="https://fonts.googleapis.com/css2?family=Smokum&display=swap" rel="stylesheet">
     <title>Réecapitulatif des produits</title>
 </head>
-
 <body>
-
-    <h1>Panier</h1>
-    <div class="tab">
+    <div id=container>
+        <div class="tab">
+        <h1>Panier</h1>
+        
         <?php
         if (!isset($_SESSION['products']) || empty($_SESSION['products'])) {
             echo "<p>Aucun produit en session...</p>";
@@ -44,11 +44,11 @@ session_start();
                 "<td>" . $index . "</td>",
                 "<td>" . $product['name'] . "</td>",
                 "<td>" . number_format($product['price'], 2, ",", "&nbsp;") . "&nbsp;€</td>",
-                "<td><a href='traitement.php?action=up-qtt&id=$index'><i class='fa-regular fa-square-plus'></a></i>" .
-                    $product['qtt'] . "<a href='traitement.php?action=down-qtt&id=$index'<i class='fa-regular fa-square-minus'></a></i></td>",
+                "<td><a href='traitement.php?action=up-qtt&id=$index'><i class='fa-duotone fa-square-minus'></a></i>" .
+                    $product['qtt'] . "<a href='traitement.php?action=down-qtt&id=$index'<i class='fa-duotone fa-square-minus'></a></i></td>",
                 "<td>" . $product['description'] . "</td>",
                 "<td>" . number_format($total, 2, ",", "&nbsp;") . "&nbsp;€</td>",
-                "<td></td>",
+                "<td><img src='upload/".$product['image']."'></td>",
                 "<td>" . "<a href='traitement.php?action=delete&id=$index'> <i class='fa-solid fa-trash-can'></a></i> </td>",
                 "</tr>";
 
@@ -72,6 +72,7 @@ session_start();
         </div>
 
     </div>
+</div>
     <script src="https://kit.fontawesome.com/ef55713c5a.js" crossorigin="anonymous"></script>
 </body>
 

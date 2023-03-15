@@ -17,17 +17,44 @@ if (isset($_GET['action'])) {
                 if ($name && $price && $qtt && $description) {
 
                     // fichier uploadé
-
+                    if(isset($_FILES['file'])){
+                        $tmpName = $_FILES['file']['tmp_name'];
+                        $nameImg = $_FILES['file']['name'];
+                        $size = $_FILES['file']['size'];
+                        $error = $_FILES['file']['error'];
+                        $type = $_FILES['file']['type'];
+                
+                        //the-joker.jpg
+                        $tabExtension = explode('.',$nameImg);//('the joker','jpg')
+                        $extension = strtolower(end($tabExtension));//.jpg
+                        $tailleMax = 400000;//taille maximum
+                
+                        $extensionAutorisees = [ 'jpg', 'jpeg', 'gif', 'png'];//tableau des extension autorisees
+                
+                
+                        if(in_array($extension, $extensionAutorisees)&& $size<= $tailleMax && $error == 0){//extension  et taille max autorisees et pas d'erreur
+                        
+                        $uniqueName = uniqid('',true);//cree un nom unique a l'image pour evite doublon
+                        $fileName = $uniqueName.'.'.$extension;
+                
+                        
+                
+                            move_uploaded_file($tmpName, './upload/'.$fileName);//deplace les fichier dans /upload/
+                        }
+                        else{
+                            echo "Mauvaise extension ou taille trop importante ou erreur";
+                        }
+                    }
 
                     $product = [
                         "name" => $name,
                         "price" => $price,
                         "qtt" => $qtt,
                         "description" => $description,
-                        "image" => $img,
+                        "image" => $fileName,
                         "total" => $price * $qtt
                     ];
-
+                    //   var_dump($fileName);die;  
                     $_SESSION['products'][] = $product;
                 }
             }
