@@ -47,8 +47,6 @@ table td, table th{
     border-bottom: 2px solid#113537 ;
     text-align: center;
 } 
-
-
    
 .myButton {
 	box-shadow: 0px 0px 0px 0px #0c0d0c;
@@ -77,7 +75,7 @@ table td, table th{
     gap: 20px;
 }
 
-.fa-solid{
+i{
     color: red;
 }
 /****** style de index.php *********/
