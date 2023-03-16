@@ -1,15 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Ajout produit</title>
-</head>
-
-<body>
+<?php
+session_start();
+ob_start();
+require "fonction.php";
+?>
 
 
     <div class="tab">
@@ -50,6 +43,8 @@
                 <div />
         </form>
     </div>
-</body>
-
-</html>
+    <?php
+    $content = ob_get_clean();
+    $titre="Ajout produit";
+    require "template.php";
+?>

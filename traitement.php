@@ -95,8 +95,9 @@ if (isset($_GET['action'])) {
             if (isset($_GET["id"]) && isset($_SESSION["products"][$_GET["id"]])) {
 
                 if ($_SESSION['products'][$_GET['id']]['qtt'] == 1) {
+                    $supprProduct = $_SESSION['products'][$_GET["id"]]['name'];
                     unset($_SESSION['products'][$_GET['id']]);
-                    $_SESSION['message'] = "Le produit " . $_SESSION['products'][$_GET["id"]]['name']." est supprimé";
+                    $_SESSION['message'] =  "Le produit"." " .$supprProduct." "."est supprimé";
                     header("Location: recap.php");
                 } else {
                     $_SESSION['products'][$_GET['id']]['qtt']--;

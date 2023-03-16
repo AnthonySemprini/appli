@@ -1,22 +1,10 @@
 <?php
 session_start();
+ob_start();
+require "fonction.php"
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Smokum&display=swap" rel="stylesheet">
-    <title>Récapitulatif des produits</title>
-</head>
-
-<body>
     <div id=container>
         <div class="tab1">
             <h1 class="pan">Panier</h1>
@@ -86,38 +74,13 @@ session_start();
                 <button class="myButton"><a href="index.php">Ajouter produit</a></button>
             </div>
             
-            <div class="message">
-                <?php
-                echo message(); 
-                
-                function message(){
-                if(isset($_SESSION["message"]) && !empty($_SESSION["message"])){
-                    $playMsg = $_SESSION["message"];
-                    unset( $_SESSION['message']);
-                    return $playMsg;
-                }
-            }
-                ?>
-            </div>
-
-            <?php
-            $nbrProduct = 0;
-            if (!isset($_SESSION['products']) && empty($_SESSION['products'])) {//si array est vide affiche 0
-                $nbrProduct = 0;
-            } else {
-            foreach ($_SESSION['products'] as $index => $product) 
-                $nbrProduct += $product['qtt'];//compte l'ensemble des produits du panier
-            }
-            // var_dump($nbrProduct);
-
-            ?>
-            <div class="basket">
-                <i class="fa-solid fa-basket-shopping"></i>
-                <p><?= $nbrProduct ?></p>
-            </div>
+            
+           
         </div>
     </div>
-    <script src="https://kit.fontawesome.com/ef55713c5a.js" crossorigin="anonymous"></script>
-</body>
-
-</html>
+    
+<?php
+    $content = ob_get_clean();
+    $titre="Panier";
+    require "template.php";
+?>
