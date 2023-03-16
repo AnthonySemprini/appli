@@ -63,6 +63,7 @@ if (isset($_GET['action'])) {
             //*----------- VIDER LE PANIER -----------------------------
         case "deleteAll":
             unset($_SESSION['products']);
+            $_SESSION['message'] = "Le pannier a été vidé";
             header("Location: recap.php");
             die;
             break;
@@ -72,7 +73,9 @@ if (isset($_GET['action'])) {
         case "delete":
             // si l'id est défini et si le produit existe dans la session
             if (isset($_GET["id"]) && isset($_SESSION["products"][$_GET["id"]])) {
+                $supprProduct = $_SESSION['products'][$_GET["id"]]['name'];// creation d'une nouvel variable pour pour donne le nom du product apres l'avoir suppr
                 unset($_SESSION['products'][$_GET['id']]);
+                $_SESSION['message'] = "Le produit"." " .$supprProduct." "."est supprimé";
                 header("Location: recap.php");
                 die;
             }
@@ -93,6 +96,7 @@ if (isset($_GET['action'])) {
 
                 if ($_SESSION['products'][$_GET['id']]['qtt'] == 1) {
                     unset($_SESSION['products'][$_GET['id']]);
+                    $_SESSION['message'] = "Le produit " . $_SESSION['products'][$_GET["id"]]['name']." est supprimé";
                     header("Location: recap.php");
                 } else {
                     $_SESSION['products'][$_GET['id']]['qtt']--;
