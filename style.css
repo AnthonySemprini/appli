@@ -164,3 +164,17 @@ textarea {
 a {
     text-decoration: none;
 }
+/********** Template *****************/
+
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+nav a{
+    font-size: 35px;
+    color: #000000;
+    text-decoration: underline;
+    margin-top: 50px;
+}

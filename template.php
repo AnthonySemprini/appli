@@ -10,14 +10,15 @@
 </head>
 <body>
     <header>
-        <ul>
-            <li><a href="index.php">Acceuil</a></li>
-            <li><a href="recap.php"></a>Panier</li>
-            <li><div class="basket">
+       <nav>
+           <a href="index.php">Acceuil</a>
+           <a href="recap.php">Panier</a>
+        </nav> 
+        
+        <div class="basket">
                 <i class="fa-solid fa-basket-shopping"></i>
                 <p><?= nbrProduct(); ?></p>
-            </div></li>
-        </ul>
+            </div>
     </header>
     <?= $content ?>
 </body>
