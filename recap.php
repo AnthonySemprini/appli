@@ -23,7 +23,6 @@ require "fonction.php"
                             <th>Nom</th>
                             <th>Prix</th>
                             <th>Quantité</th>
-                            <th>Description</th>
                             <th>Total</th>
                             <th>Photo</th>
                             <th>Actions</th>
@@ -46,7 +45,6 @@ require "fonction.php"
                                     <?= $product['qtt'] ?>
                                     <a href="traitement.php?action=down-qtt&id=<?= $index ?>"><i class="fa-solid fa-square-minus"></i></a>
                                 </td>
-                                <td><?= $product['description'] ?></td>
                                 <td><?= number_format($total, 2, ",", "&nbsp;") ?> &nbsp;€</td>
                                 <td> <img src='upload/<?= $product['image'] ?>'> </td>
                                 <td><a href='traitement.php?action=delete&id=<?= $index ?>'> <i class='fa-solid fa-trash-can'></a></i> </td>
