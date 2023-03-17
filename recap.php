@@ -40,7 +40,7 @@ require "fonction.php"
                         <tbody>
                             <tr>
                                 <td><?= $index ?></td>
-                                <td><?= $product['name'] ?></td>
+                                <td><a href="detail.php?id=<?= $index ?>"><?= $product['name'] ?></a></td>
                                 <td><?= number_format($product['price'], 2, ",", "&nbsp;") ?> &nbsp;€ </td>
                                 <td> <a href="traitement.php?action=up-qtt&id=<?= $index ?>"><i class="fa-solid fa-square-plus"></i></a>
                                     <?= $product['qtt'] ?>

@@ -14,11 +14,11 @@
            <a href="index.php">Acceuil</a>
            <a href="recap.php">Panier</a>
         </nav> 
-        
         <div class="basket">
                 <i class="fa-solid fa-basket-shopping"></i>
                 <p><?= nbrProduct(); ?></p>
             </div>
+        
     </header>
     <?= $content ?>
 </body>
